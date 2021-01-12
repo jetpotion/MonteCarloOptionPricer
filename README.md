@@ -28,14 +28,17 @@ Most of the work performed is the double for loop inside the Mediator start func
 *As evidence for the time, check the output and check the option data input*
 
 **WITHOUT MULTITHREADING:
-Time to completion :  90.6-98 seconds**
+Time to completion :  90.6-98 seconds
+NSIM: 1000000 NT:500  **
 
-NSIM: 1000000 NT:500
 Total time: 87.0217
 Output # 1 Price: 5.71458
+
 Total time: 92.582
+
 Output # 2 Price: 2.2088
 Total time: 98.522
+
 Output # 3 Price: 7.7895
 Total time: 90.39
 Output # 4 Price: 94.1845
@@ -47,9 +50,9 @@ Total time: 98.1227
 Output # 7 Price: 0.209067
 
 **With Multithreading (OMP)
-Time to completion: 32-42 seconds**
+Time to completion: 32-42 seconds
+NSIM: 1000000 NT:500 **
 
-NSIM: 1000000 NT:500
 Total time: 29.0217
 Output # 1 Price: 5.71458
 Total time: 31.5582
