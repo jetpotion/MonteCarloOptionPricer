@@ -24,51 +24,60 @@ This header file is the application input point and is by far the largest file. 
 ## 3.COMPLEXITY/PERFORMANCE/OUTPUT
 Most of the work performed is the double for loop inside the Mediator start function. So in general the time complexity of this program is O(NSIM* SUBDVISIONS). Which is quadratic and in general has a convergence that is linear.  For inputs NSIM*subdivisions >= 5,000,000 performance starts slowing down. Therefore we incorporated multi-threading that is provided by the pragma OMP
 
-*Across all applications and  option parameter inputs. For NSIM = 1,000,00 and subdivisions = 500*
-*As evidence for the time, check the output and check the option data input*
+_Across all applications and  option parameter inputs. For NSIM = 1,000,00 and subdivisions = 500_
+_As evidence for the time, check the output and check the option data input_
 
-**WITHOUT MULTITHREADING:
-Time to completion :  90.6-98 seconds
-NSIM: 1000000 NT:500  **
+__WITHOUT MULTITHREADING:__
+__Avg Time to completion :  90.6-98 seconds__
+__NSIM: 1000000 NT:500__
 
 Total time: 87.0217
 Output # 1 Price: 5.71458
 
 Total time: 92.582
-
 Output # 2 Price: 2.2088
-Total time: 98.522
 
+Total time: 98.522
 Output # 3 Price: 7.7895
+
 Total time: 90.39
 Output # 4 Price: 94.1845
+
 Total time: 89.9149
 Output # 5 Price: 1.22124
+
 Total time: 89.6994
 Output # 6 Price: 4.04489
+
 Total time: 98.1227
 Output # 7 Price: 0.209067
 
-**With Multithreading (OMP)
-Time to completion: 32-42 seconds
-NSIM: 1000000 NT:500 **
+__With Multithreading (OMP)__
+__Avg Time to completion: 32-42 seconds
+__NSIM: 1000000 NT:500__
 
 Total time: 29.0217
 Output # 1 Price: 5.71458
+
 Total time: 31.5582
 Output # 2 Price: 2.2088
+
 Total time: 32.5722
 Output # 3 Price: 7.7895
+
 Total time: 34.639
 Output # 4 Price: 94.1845
+
 Total time: 34.9149
 Output # 5 Price: 1.22124
+
 Total time: 36.6994
 Output # 6 Price: 4.04489
+
 Total time: 37.4527
 Output # 7 Price: 0.209067
 
-As you can see here the performance was increased by 50 percent with OMP parallel. The user can choose his own and parameter schemes to check the accuracy of the application. I also tested the version with Asian options and maintained **0.02 - 0.03** cent accuracy. And here is CD provided by the MSVC. 
+As you can see here the performance was increased by 50 percent with OMP parallel. The user can choose his own and parameter schemes to check the accuracy of the application. I also tested the version with Asian options and maintained __0.02 - 0.03__ cent accuracy. And here is CD provided by the MSVC. 
 
 
 
