@@ -109,4 +109,5 @@ https://www.geeksforgeeks.org/openmp-introduction-with-installation-guide/
 8. If the user wants to type in the input for a single set of option parameter than the user be prompted to do so
 9. The simulation wil begin after the user has done steps 4-8.
 10. The option prices and simulation number will printed for convience.
-
+# Wanna Contribute?
+If the user wants to add additional finite difference methods,random number generatator types or add addition types of options for this application then fork over the repository. Make changes and then see if your changes are approved.  The user must directly inherit from the respected tools. The application is not limited to option prices. There are various Stochastic differential equation that need to be solved from various engineering problems such as home heating. Here is an article and see if your engineering problem has a stochastic differential equation.https://en.wikipedia.org/wiki/Stochastic_differential_equation
