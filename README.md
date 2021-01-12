@@ -82,7 +82,7 @@ As you can see here the performance was increased by 50 percent with OMP paralle
 ![__Contest Diagram__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/ClassDiagram.png)
 
 #Mathematical Models used for RNG
-
+![__Polar Masglia__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture.PNG)
 
 
 
