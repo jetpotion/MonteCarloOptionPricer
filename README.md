@@ -24,7 +24,7 @@ This header file is the application input point and is by far the largest file. 
 ## 3.COMPLEXITY/PERFORMANCE/OUTPUT
 Most of the work performed is the double for loop inside the Mediator start function. So in general the time complexity of this program is O(NSIM* SUBDVISIONS). Which is quadratic and in general has a convergence that is linear.  For inputs NSIM*subdivisions >= 5,000,000 performance starts slowing down. Therefore we incorporated multi-threading that is provided by the pragma OMP
 
-_Across all applications and  option parameter inputs. For NSIM = 1,000,00 and subdivisions = 500_
+_Across all applications and  option parameter inputs. For NSIM = 1,000,000 and subdivisions = 500
 _As evidence for the time, check the output and check the option data input_
 
 __WITHOUT MULTITHREADING:__
@@ -80,6 +80,8 @@ Output # 7 Price: 0.209067
 As you can see here the performance was increased by 50 percent with OMP parallel. The user can choose his own and parameter schemes to check the accuracy of the application. I also tested the version with Asian options and maintained __0.02 - 0.03__ cent accuracy. And here is CD provided by the MSVC. 
 
 ![__Contest Diagram__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/ClassDiagram.png)
+
+#Mathematical Models used for RNG
 
 
 
