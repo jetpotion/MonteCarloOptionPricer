@@ -79,6 +79,8 @@ Output # 7 Price: 0.209067
 
 As you can see here the performance was increased by 50 percent with OMP parallel. The user can choose his own and parameter schemes to check the accuracy of the application. I also tested the version with Asian options and maintained __0.02 - 0.03__ cent accuracy. And here is CD provided by the MSVC. 
 
+![__Contest Diagram__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/ClassDiagram.png)
+
 
 
 
