@@ -90,6 +90,9 @@ As you can see here the performance was increased by 50 percent with OMP paralle
 ## Mersenne Twister 
 ![__Mersenne Twister__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture_3.PNG)
 
+# Finite Method Solution  schemes used in FDM
+![__FDMMETHODS__]
+
 
 
 
