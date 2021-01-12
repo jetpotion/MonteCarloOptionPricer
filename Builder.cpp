@@ -36,10 +36,10 @@ StochasticEquation McBuilder::BuildSde(std::size_t choice) const
 	switch (choice)
 	{
 	default:
-	case 1: return std::make_shared<WilliamZhang::ISde::GBM>(m_data.r, m_data.sig, m_data.D, m_data.S, m_data.T);
-	case 2: return std::make_shared<WilliamZhang::ISde::CEV>(m_data.r, m_data.sig, m_data.D, m_data.S, m_data.T, m_data.beta);
+	case 1: return std::make_shared<MonteCarloOptionApplication::ISde::GBM>(m_data.r, m_data.sig, m_data.D, m_data.S, m_data.T);
+	case 2: return std::make_shared<MonteCarloOptionApplication::ISde::CEV>(m_data.r, m_data.sig, m_data.D, m_data.S, m_data.T, m_data.beta);
 	}
-	return std::make_shared<WilliamZhang::ISde::GBM>(m_data.r, m_data.sig, m_data.D, m_data.S, m_data.T);
+	return std::make_shared<MonteCarloOptionApplication::ISde::GBM>(m_data.r, m_data.sig, m_data.D, m_data.S, m_data.T);
 }
 //Build the RNG
 RandomNumberGenerator McBuilder::BuildRng(std::size_t choice) const
@@ -48,11 +48,11 @@ RandomNumberGenerator McBuilder::BuildRng(std::size_t choice) const
 	switch (choice)
 	{
 	default:
-	case 1: return std::make_shared<WilliamZhang::IRng::MyMersenneTwister>();
-	case 2: return std::make_shared<WilliamZhang::IRng::PolarMasglia>();
-	case 3: return std::make_shared<WilliamZhang::IRng::BoxMuller>();
+	case 1: return std::make_shared<MonteCarloOptionApplication::IRng::MyMersenneTwister>();
+	case 2: return std::make_shared<MonteCarloOptionApplication::IRng::PolarMasglia>();
+	case 3: return std::make_shared<MonteCarloOptionApplication::IRng::BoxMuller>();
 	}
-	return std::make_shared<WilliamZhang::IRng::MyMersenneTwister>();
+	return std::make_shared<MonteCarloOptionApplication::IRng::MyMersenneTwister>();
 }
 //Build the fdm facotry method 
 FiniteDifferenceMethod McBuilder::BuildFdm(StochasticEquation eq, std::size_t sub_division, std::size_t choice) const
@@ -61,12 +61,12 @@ FiniteDifferenceMethod McBuilder::BuildFdm(StochasticEquation eq, std::size_t su
 	switch (choice)
 	{
 	default:
-	case 1: return std::make_shared<WilliamZhang::IFdm::EulerFDM>(eq, sub_division);
-	case 2: return std::make_shared<WilliamZhang::IFdm::MilsteinFDM>(eq, sub_division);
+	case 1: return std::make_shared<MonteCarloOptionApplication::IFdm::EulerFDM>(eq, sub_division);
+	case 2: return std::make_shared<MonteCarloOptionApplication::IFdm::MilsteinFDM>(eq, sub_division);
 		//In this case with the fully symtettric since we already have FDM schemes for the Euler and the Milstein method s
-	case 3: return std::make_shared<WilliamZhang::IFdm::PredictedMidPointFDM>(eq, sub_division, 0.5, 0.5);
+	case 3: return std::make_shared<MonteCarloOptionApplication::IFdm::PredictedMidPointFDM>(eq, sub_division, 0.5, 0.5);
 	}
-	return std::make_shared<WilliamZhang::IFdm::EulerFDM>(eq, sub_division);
+	return std::make_shared<MonteCarloOptionApplication::IFdm::EulerFDM>(eq, sub_division);
 }
 //Build the pricer
 Pricers McBuilder::BuildPricer(std::size_t choice) const
@@ -88,10 +88,10 @@ Pricers McBuilder::BuildPricer(std::size_t choice) const
 	switch (choice)
 	{
 	default:
-	case 1: return std::make_shared<WilliamZhang::IPricer::EuropeanPricer>(payoff, discounter);
-	case 2: return std::make_shared<WilliamZhang::IPricer::AsianPricer>(payoff, discounter);
-	case 3: return std::make_shared<WilliamZhang::IPricer::BarrierPricer>(payoff, discounter, m_data.l, m_data.rebate);
+	case 1: return std::make_shared<MonteCarloOptionApplication::IPricer::EuropeanPricer>(payoff, discounter);
+	case 2: return std::make_shared<MonteCarloOptionApplication::IPricer::AsianPricer>(payoff, discounter);
+	case 3: return std::make_shared<MonteCarloOptionApplication::IPricer::BarrierPricer>(payoff, discounter, m_data.l, m_data.rebate);
 	}
 	//In case if some exception occured then return Eurooean
-	return std::make_shared<WilliamZhang::IPricer::EuropeanPricer>(payoff, discounter);
+	return std::make_shared<MonteCarloOptionApplication::IPricer::EuropeanPricer>(payoff, discounter);
 }

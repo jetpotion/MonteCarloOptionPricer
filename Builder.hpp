@@ -7,10 +7,10 @@
 #ifndef BUILDER_HPP
 #define BUILDER_HPP
 //Appropate alias for the shared pt
-using FiniteDifferenceMethod = std::shared_ptr<WilliamZhang::IFdm::FDM>;
-using RandomNumberGenerator = std::shared_ptr<WilliamZhang::IRng::RNG>;
-using StochasticEquation = std::shared_ptr<WilliamZhang::ISde::SDE>;
-using Pricers = std::shared_ptr<WilliamZhang::IPricer::Pricer>;
+using FiniteDifferenceMethod = std::shared_ptr<MonteCarloOptionApplication::IFdm::FDM>;
+using RandomNumberGenerator = std::shared_ptr<MonteCarloOptionApplication::IRng::RNG>;
+using StochasticEquation = std::shared_ptr<MonteCarloOptionApplication::ISde::SDE>;
+using Pricers = std::shared_ptr<MonteCarloOptionApplication::IPricer::Pricer>;
 class McBuilder {
 private:
 	//The data itself 

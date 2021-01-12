@@ -2,7 +2,7 @@
 #ifndef PRICER_HPP
 #define PRICER_HPP
 //PRICER FOR EUROPEAN/ASIAN/BARRIER
-namespace WilliamZhang
+namespace MonteCarloOptionApplication
 {
 	namespace IPricer
 	{

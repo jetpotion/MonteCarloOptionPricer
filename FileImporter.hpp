@@ -8,7 +8,7 @@
 #define  FILEIMPORTER_HPP
 //Only one mediator at a time. That has on
 
-namespace WilliamZhang
+namespace MonteCarloOptionApplication
 {
 	namespace FileImporter
 	{

@@ -11,6 +11,6 @@ int main()
 
 	
 	//Hide all the implementation from the user of the application and just call start process 
-	using namespace WilliamZhang::FileImporter;
+	using namespace MonteCarloOptionApplication::FileImporter;
 	StartProcess();
 }

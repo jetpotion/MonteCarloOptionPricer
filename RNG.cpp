@@ -3,17 +3,17 @@
 #include <numbers>
 //Generate the engine with a random device and with a distribution with mean 0 and sd = 1
 //Make sure that MT19937_64 engine is thread safe by declaring it thread local 
-thread_local std::mt19937_64 WilliamZhang::IRng::RNG::engine(std::random_device{}());
+thread_local std::mt19937_64 MonteCarloOptionApplication::IRng::RNG::engine(std::random_device{}());
 
-WilliamZhang::IRng::MyMersenneTwister::MyMersenneTwister() : gaussian(0.0f, 1.0f)
+MonteCarloOptionApplication::IRng::MyMersenneTwister::MyMersenneTwister() : gaussian(0.0f, 1.0f)
 {
 }
 //Copy constructor
-WilliamZhang::IRng::MyMersenneTwister::MyMersenneTwister(const MyMersenneTwister& source) : gaussian(source.gaussian)
+MonteCarloOptionApplication::IRng::MyMersenneTwister::MyMersenneTwister(const MyMersenneTwister& source) : gaussian(source.gaussian)
 {
 }
 //Assignment operator
-WilliamZhang::IRng::MyMersenneTwister& WilliamZhang::IRng::MyMersenneTwister::operator=(const MyMersenneTwister& source)
+MonteCarloOptionApplication::IRng::MyMersenneTwister& MonteCarloOptionApplication::IRng::MyMersenneTwister::operator=(const MyMersenneTwister& source)
 {
 	if (this == &source)
 	{
@@ -27,21 +27,21 @@ WilliamZhang::IRng::MyMersenneTwister& WilliamZhang::IRng::MyMersenneTwister::op
 	// TODO: insert return statement here
 }
 //Generate the mersenee twister rnadom number generation from the from the guassian
-double WilliamZhang::IRng::MyMersenneTwister::generateRandomNumber()
+double MonteCarloOptionApplication::IRng::MyMersenneTwister::generateRandomNumber()
 {
 	return gaussian(engine);
 }
 //The following are constructgors/copy and assignment operator
 
-WilliamZhang::IRng::PolarMasglia::PolarMasglia() : distribution(0.0, 1.0)
+MonteCarloOptionApplication::IRng::PolarMasglia::PolarMasglia() : distribution(0.0, 1.0)
 {
 }
 
-WilliamZhang::IRng::PolarMasglia::PolarMasglia(const PolarMasglia& source) : RNG(source), distribution(source.distribution)
+MonteCarloOptionApplication::IRng::PolarMasglia::PolarMasglia(const PolarMasglia& source) : RNG(source), distribution(source.distribution)
 {
 }
 
-WilliamZhang::IRng::PolarMasglia& WilliamZhang::IRng::PolarMasglia::operator=(const PolarMasglia& source)
+MonteCarloOptionApplication::IRng::PolarMasglia& MonteCarloOptionApplication::IRng::PolarMasglia::operator=(const PolarMasglia& source)
 {
 	if (this == &source)
 		return *this;
@@ -51,7 +51,7 @@ WilliamZhang::IRng::PolarMasglia& WilliamZhang::IRng::PolarMasglia::operator=(co
 	return *this;
 }
 //The method to generate the random numbers 
-double WilliamZhang::IRng::PolarMasglia::generateRandomNumber()
+double MonteCarloOptionApplication::IRng::PolarMasglia::generateRandomNumber()
 {
 	double u, v, S;
 
@@ -68,15 +68,15 @@ double WilliamZhang::IRng::PolarMasglia::generateRandomNumber()
 	return u * fac;
 }
 //Standard constructors destruction 
-WilliamZhang::IRng::BoxMuller::BoxMuller() : distribution(0.0, 1.0)
+MonteCarloOptionApplication::IRng::BoxMuller::BoxMuller() : distribution(0.0, 1.0)
 {
 }
 
-WilliamZhang::IRng::BoxMuller::BoxMuller(const BoxMuller& source) : RNG(source), distribution(source.distribution)
+MonteCarloOptionApplication::IRng::BoxMuller::BoxMuller(const BoxMuller& source) : RNG(source), distribution(source.distribution)
 {
 }
 
-WilliamZhang::IRng::BoxMuller& WilliamZhang::IRng::BoxMuller::operator=(const BoxMuller& source)
+MonteCarloOptionApplication::IRng::BoxMuller& MonteCarloOptionApplication::IRng::BoxMuller::operator=(const BoxMuller& source)
 {
 	if (this == &source)
 		return *this;
@@ -86,7 +86,7 @@ WilliamZhang::IRng::BoxMuller& WilliamZhang::IRng::BoxMuller::operator=(const Bo
 	return *this;
 }
 
-double WilliamZhang::IRng::BoxMuller::generateRandomNumber()
+double MonteCarloOptionApplication::IRng::BoxMuller::generateRandomNumber()
 {
 	//Since sigma = 1 and mu = 0. The addtional terms dont apply
 	double u1;

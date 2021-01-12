@@ -1,7 +1,7 @@
 #ifndef SDE_HPP
 #define SDE_HPP
 //THE VARIOUS TYPES OF SDE 
-namespace WilliamZhang
+namespace MonteCarloOptionApplication
 {
 	namespace ISde
 	{

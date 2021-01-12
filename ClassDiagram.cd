@@ -14,44 +14,44 @@
       <FileName>StopWatch.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IFdm::FDM">
+  <Class Name="MonteCarloOptionApplication::IFdm::FDM">
     <Position X="4.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IQgAAAAAAAAAAAABAAAQAAAAABAAAAAAgCAgAAAAAAA=</HashCode>
       <FileName>FDM.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IFdm::EulerFDM">
+  <Class Name="MonteCarloOptionApplication::IFdm::EulerFDM">
     <Position X="1.75" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAgAAAAAAA=</HashCode>
       <FileName>FDM.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IFdm::MilsteinFDM">
+  <Class Name="MonteCarloOptionApplication::IFdm::MilsteinFDM">
     <Position X="4.25" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAgAAAAAEA=</HashCode>
       <FileName>FDM.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IFdm::PredictedMidPointFDM">
+  <Class Name="MonteCarloOptionApplication::IFdm::PredictedMidPointFDM">
     <Position X="6.5" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAQAAAAAAAAAAAAAAAAAAAAAAAgAQAgBAAAAAA=</HashCode>
       <FileName>FDM.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IPricer::Pricer" Collapsed="true">
+  <Class Name="MonteCarloOptionApplication::IPricer::Pricer" Collapsed="true">
     <Position X="7.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAACAAQABAAAACAAAAAAAAAAAAgAAAAAgAABAAAA=</HashCode>
       <FileName>Pricer.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IPricer::EuropeanPricer">
+  <Class Name="MonteCarloOptionApplication::IPricer::EuropeanPricer">
     <Position X="9.25" Y="6.25" Width="1.5" />
-    <InheritanceLine Type="WilliamZhang::IPricer::Pricer" FixedToPoint="true">
+    <InheritanceLine Type="MonteCarloOptionApplication::IPricer::Pricer" FixedToPoint="true">
       <Path>
         <Point X="8" Y="5.562" />
         <Point X="8" Y="5.937" />
@@ -65,16 +65,16 @@
       <FileName>Pricer.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IPricer::AsianPricer">
+  <Class Name="MonteCarloOptionApplication::IPricer::AsianPricer">
     <Position X="5.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAARBACAAQgBAAAACAAAAAAAAAAAAAAAAgAgAAAAAAA=</HashCode>
       <FileName>Pricer.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IPricer::BarrierPricer">
+  <Class Name="MonteCarloOptionApplication::IPricer::BarrierPricer">
     <Position X="7.25" Y="6.25" Width="1.5" />
-    <InheritanceLine Type="WilliamZhang::IPricer::Pricer" FixedToPoint="true">
+    <InheritanceLine Type="MonteCarloOptionApplication::IPricer::Pricer" FixedToPoint="true">
       <Path>
         <Point X="8" Y="5.562" />
         <Point X="8" Y="5.937" />
@@ -87,49 +87,49 @@
       <FileName>Pricer.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IRng::RNG">
+  <Class Name="MonteCarloOptionApplication::IRng::RNG">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>RNG.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IRng::PolarMasglia">
+  <Class Name="MonteCarloOptionApplication::IRng::PolarMasglia">
     <Position X="6" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAEAAEAAAAAAAIAAAAAAAgAAAAAAA=</HashCode>
       <FileName>RNG.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IRng::MyMersenneTwister">
+  <Class Name="MonteCarloOptionApplication::IRng::MyMersenneTwister">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAQAAAIAAAAAAgAAAACAA=</HashCode>
       <FileName>RNG.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::IRng::BoxMuller">
+  <Class Name="MonteCarloOptionApplication::IRng::BoxMuller">
     <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAIEAAEAQAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>RNG.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::ISde::SDE">
+  <Class Name="MonteCarloOptionApplication::ISde::SDE">
     <Position X="13.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EEAAAAAQAAAgAEAAAAAQEAAQAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>SDE.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::ISde::GBM">
+  <Class Name="MonteCarloOptionApplication::ISde::GBM">
     <Position X="11.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EEBAAAARAAAAAEAAAAAQECAAAAABAAAEAAAgAAAAAgg=</HashCode>
       <FileName>SDE.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WilliamZhang::ISde::CEV">
+  <Class Name="MonteCarloOptionApplication::ISde::CEV">
     <Position X="15.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EEBAAAARAABAAEAAAAAQFCAAAAAAAAAEAAAgAAAAAgA=</HashCode>

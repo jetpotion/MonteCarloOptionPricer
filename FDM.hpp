@@ -5,29 +5,29 @@
 //FDM METHODS
 #ifndef FDM_HPP
 #define FDM_HPP
-namespace WilliamZhang
+namespace MonteCarloOptionApplication
 {
 	namespace IFdm
 	{
 		class  FDM
 		{
 		protected:
-			std::shared_ptr<WilliamZhang::ISde::SDE>eq; //equation itself
+			std::shared_ptr<MonteCarloOptionApplication::ISde::SDE>eq; //equation itself
 		public:
 			std::size_t NT; //Number of trials(which is a unisnged interger)
 			double k; //Mesh size
 		public:
 			//Constructor
-			FDM(std::shared_ptr<WilliamZhang::ISde::SDE> sde, std::size_t sub_divisions);
+			FDM(std::shared_ptr<MonteCarloOptionApplication::ISde::SDE> sde, std::size_t sub_divisions);
 			virtual ~FDM() = default;
 			//Copy construcotr
 			FDM(const FDM& source);
 			//Assignment operator
 			FDM& operator=(const FDM& source);
 			//equation  getter
-			std::shared_ptr<WilliamZhang::ISde::SDE> equation() const;
+			std::shared_ptr<MonteCarloOptionApplication::ISde::SDE> equation() const;
 			//Equatioon setter
-			void equation(std::shared_ptr<WilliamZhang::ISde::SDE> sde);
+			void equation(std::shared_ptr<MonteCarloOptionApplication::ISde::SDE> sde);
 			//Virtual Method to find the next solution to the finite difference methid 
 			virtual double advance(double x_n, double t_n, double d_t, double WeinerIncrement) const = 0;
 			double RequestIncrement(unsigned int n) const;	//Takes an unsigned int and be multiply it by the mesh size
@@ -38,7 +38,7 @@ namespace WilliamZhang
 		{
 		public:
 			//Constructor
-			EulerFDM(std::shared_ptr<WilliamZhang::ISde::SDE> sde, std::size_t sub_divisions) : FDM(sde, sub_divisions)
+			EulerFDM(std::shared_ptr<MonteCarloOptionApplication::ISde::SDE> sde, std::size_t sub_divisions) : FDM(sde, sub_divisions)
 			{
 			}
 			//Copy constructor 
@@ -62,7 +62,7 @@ namespace WilliamZhang
 		{
 		public:
 			//constructor
-			MilsteinFDM(std::shared_ptr<WilliamZhang::ISde::SDE> sde, std::size_t sub_divisions) : FDM(sde, sub_divisions)
+			MilsteinFDM(std::shared_ptr<MonteCarloOptionApplication::ISde::SDE> sde, std::size_t sub_divisions) : FDM(sde, sub_divisions)
 			{
 			}
 			//copy constructor
@@ -92,7 +92,7 @@ namespace WilliamZhang
 			double b;
 		public:
 			//Constructor
-			PredictedMidPointFDM(std::shared_ptr<WilliamZhang::ISde::SDE> sde, std::size_t sub_divisions, double a, double b) : FDM(sde, sub_divisions), a(a), b(b)
+			PredictedMidPointFDM(std::shared_ptr<MonteCarloOptionApplication::ISde::SDE> sde, std::size_t sub_divisions, double a, double b) : FDM(sde, sub_divisions), a(a), b(b)
 			{
 			}
 			//Copy constructor

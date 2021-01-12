@@ -4,7 +4,7 @@
 #define RNG_HPP
 //RNG  generator to create GAUSSIAN distributed numbers with mean zero sd = 1
 
-namespace WilliamZhang
+namespace MonteCarloOptionApplication
 {
 	namespace IRng
 	{
