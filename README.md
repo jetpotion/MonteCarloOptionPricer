@@ -53,7 +53,7 @@ Total time: 98.1227
 Output # 7 Price: 0.209067
 
 __With Multithreading (OMP)__
-__Avg Time to completion: 32-42 seconds
+__Avg Time to completion: 32-42 seconds__
 __NSIM: 1000000 NT:500__
 
 Total time: 29.0217
