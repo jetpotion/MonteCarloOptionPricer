@@ -82,19 +82,19 @@ As you can see here the performance was increased by 50 percent with OMP paralle
 
 # Mathematical Models implemented  used for RNG
 ## Polar Masglia 
-![__Polar Masglia__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture.PNG)
+![__Polar Masglia__](https://en.wikipedia.org/wiki/Marsaglia_polar_method)
 
 ## Box Mueller
-![__Box Mueller__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture_2.PNG)
+![__Box Mueller__](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform)
 
 ## Mersenne Twister 
-![__Mersenne Twister__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture_3.PNG)
+![__Mersenne Twister__](https://en.wikipedia.org/wiki/Mersenne_Twister)
 
 # Finite Method Solution  schemes used in FDM
 ![__FDMMETHODS__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture_4.PNG)
 
 # Constrast elasticitity variance Model Stochastic Differential Equation
-![__CEV MODEL__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture_5.PNG)
+![__CEV MODEL__](https://en.wikipedia.org/wiki/Constant_elasticity_of_variance_model)
 
 # APPLICATION USER SET UP (VERY IMPORTANT)
 1. The user must have MSVC C++ as well install boost libraries. Here is the link to boost and visual studio 2017. But the user should install the lastest version of their respected software 
