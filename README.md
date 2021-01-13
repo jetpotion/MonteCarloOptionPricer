@@ -20,10 +20,9 @@ This class essentially coalesces all the various the parts the user want and bui
 ### 6.MEDIATOR
 The parts made from the Builder class must be mediated because the parts made from Builder class have complex interactions. Therefore, we have a mediator to resolve these interactions inside a STRUCT to generate an output. The nested loop side the start function is parallelized with OMP to improve speed.
 ### 7.FILEIMPORTER
-This header file is the application input point and is by far the largest file. This file allows the user the start the application and allows the user to choose input data by console or by File.  The user also must specify the #NSIM and #NUMBER of trials as well as which parts they want in the application. This is where the mediator does most of its work.
+This header file is the application input point and is by far the largest file. This file allows the user the start the application and allows the user to choose input data by console or by File.  The user also must specify the #NSIM and #SUBIDVISION as well as which parts they want in the application. This is where the mediator does most of its work.
 ## 3.COMPLEXITY/PERFORMANCE/OUTPUT
 Most of the work performed is the double for loop inside the Mediator start function. So in general the time complexity of this program is O(NSIM* SUBDVISIONS). Which is quadratic and in general has a convergence that is linear.  For inputs NSIM*subdivisions >= 5,000,000 performance  to starts to deteriorate. Therefore we incorporated multi-threading that is provided by  OMP parallelization library.
-
 _Across all option parameter inputs the  NSIM  was  1,000,000 and subdivisions steps were  500_
 _As evidence for the  running time, run the application with the default parameters provided in the input.csv_
 
@@ -84,6 +83,7 @@ As you can see here the performance was increased by 50 percent with OMP paralle
 # Mathematical Models implemented  used for RNG
 ## Polar Masglia 
 ![__Polar Masglia__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture.PNG)
+
 ## Box Mueller
 ![__Box Mueller__](https://github.com/jetpotion/MonteCarloOptionPricer/blob/master/Capture_2.PNG)
 
