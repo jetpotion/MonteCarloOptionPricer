@@ -6,19 +6,19 @@ Name: William Zhang
 ## 1.OVERVIEW
 The FDM option pricing application is for pricing various options such Asian, European and Barrier Option using various Finite Difference method. The application allows the user to input various Option pricing parameter such as stock price, strike price, risk-free interest rate  to price options using the various Finite Difference Methods. The application even allows the user to use various Random number generators such as Mersenne Twister, Polar Masglia and Bob Mueller.  Finally, the user can input the data by console or by putting the data inside the input.csv. If the user wishes to put more than one option dataset parameters, then the user should put the data into the input.csv.
 ## 2.CLASS OVERVIEW
-The user can see the class diagram hosted inside in the Solution Explorer, by opening the project solution folder and view ClassDiagram.cd. The following are a set of description of the various classes used in the application.  
+The user can see the class diagram hosted inside in the Solution Explorer, by opening the project solution folder and  by viewing the "ClassDiagram.cd" file. The following are a set of description of the various classes used in the application.  
 ### 1.RNG
 This class essentially generates a random number that follows a normal distribution with mean zero and variance one. The user can select between various generators such as Mersenne Twister, Polar Masglia and Box Mueller. The latter two transforming uniform random numbers from zero to one to a normal distribution with polar form.
 ### 2.SDE
 This class specifies which types of stochastic differential equation that the user wants. The user is able to choose between the contrast elasticity variance model (CEV) and the Geometric Brown Motion Differential equation (GBM). The former being similar to GBM but there is a specified Beta that model the elasticity of volatility in relation to stock price.
 ### 3.FDM
-This class solves the Stochastic differential equation   by allowing the user to choose the Finite difference method to solve the differential equation. The user can use choose explicit Euler, Balanced Midpoint, and Milstein Method to solve the differential equation.
+This class solves the specified  Stochastic differential equation   by allowing the user to choose the  various Finite difference methods to solve the differential equation. The user can use choose explicit Euler, Balanced Midpoint, and Milstein Method to solve the differential equation.
 ### 4. PRICER
 This class models the various types of options that the user can choose. Different options have different payout schemes. The user can choose between the various option such as the classical European, The Asian, or Barrier Options.
 ### 5. BUILDER
-This class essentially coalesces all the various the parts the user want and builds the appropriate RNG,SDE,PRICER,and FDM objects to start the Finite Difference method application. The parts are created and stored into a tuple 
+This class essentially coalesces all the various the parts the user want and builds the appropriate RNG,SDE,PRICER,and FDM objects to start the Finite Difference method  simulation . The parts are created and stored into a tuple for convience.
 ### 6.MEDIATOR
-The parts made from the Builder class must be mediated because the parts made from Builder have complex interactions. Therefore, we have a mediator to resolve these interactions inside a STRUCT to generate an output. The LOOP in the start function is parallelized with Pragma OMP to improve speed.
+The parts made from the Builder class must be mediated because the parts made from Builder class have complex interactions. Therefore, we have a mediator to resolve these interactions inside a STRUCT to generate an output. The nested loop side the start function is parallelized with OMP to improve speed.
 ### 7.FILEIMPORTER
 This header file is the application input point and is by far the largest file. This file allows the user the start the application and allows the user to choose input data by console or by File.  The user also must specify the #NSIM and #NUMBER of trials as well as which parts they want in the application. This is where the mediator does most of its work.
 ## 3.COMPLEXITY/PERFORMANCE/OUTPUT
