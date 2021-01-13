@@ -4,7 +4,7 @@ This is Monte Carlo Application that  uses various Options/FDM/RNG/PRICER
 # FDM option APPLICATION OVERVIEW
 Name: William Zhang
 ## 1.OVERVIEW
-The FDM option pricing application is for pricing various options such Asian, European and Barrier Option using various Finite Difference method. The application allows the user to input various Option pricing parameter such as stock price, strike price, risk-free interest rate  to price options using the various Finite Difference Methods. The application even allows the user to use various Random number generators such as Mersenne Twister, Polar Masglia and Bob Mueller.  Finally, the user can input the data by console or by putting the data inside the input.csv. If the user wishes to put more than one option dataset parameters, then the user should put the data into the input.csv.
+The FDM option pricing application is for pricing various options such Asian, European and Barrier Option using various Finite Difference method. The application allows the user to input various Option pricing parameter such as stock price, strike price, risk-free interest rate  to price options using the various Finite Difference Methods. The application even allows the user to use various Random number generators such as Mersenne Twister, Polar Masglia and Bob Mueller.  Finally, the user can input the data by console or by putting the data inside the input.csv. If the user wishes to put more than one option dataset parameters, then the user should put the data into the input.csv file.
 ## 2.CLASS OVERVIEW
 The user can see the class diagram hosted inside in the Solution Explorer, by opening the project solution folder and  by viewing the "ClassDiagram.cd" file. The following are a set of description of the various classes used in the application.  
 ### 1.RNG
@@ -22,7 +22,7 @@ The parts made from the Builder class must be mediated because the parts made fr
 ### 7.FILEIMPORTER
 This header file is the application input point and is by far the largest file. This file allows the user the start the application and allows the user to choose input data by console or by File.  The user also must specify the #NSIM and #SUBIDVISION as well as which parts they want in the application. This is where the mediator does most of its work.
 ## 3.COMPLEXITY/PERFORMANCE/OUTPUT
-Most of the work performed is the double for loop inside the Mediator start function. So in general the time complexity of this program is O(NSIM* SUBDVISIONS). Which is quadratic and in general has a convergence that is linear.  For inputs NSIM*subdivisions >= 5,000,000 performance  to starts to deteriorate. Therefore we incorporated multi-threading that is provided by  OMP parallelization library.
+Most of the work performed is the double for loop inside the Mediator start function. So in general the time complexity of this program is O(NSIM* SUBDVISIONS). Which is quadratic in time complexity and in general has a  solution convergence that is linear.  For inputs NSIM*subdivisions >= 5,000,000 performance  to starts to deteriorate. Therefore we incorporated multi-threading that is provided by  OMP parallelization library.
 _Across all option parameter inputs the  NSIM  was  1,000,000 and subdivisions steps were  500_
 _As evidence for the  running time, run the application with the default parameters provided in the input.csv_
 
