@@ -3,11 +3,11 @@
 #include <fstream>
 #include <iostream>
 #include <omp.h>
-
+#include <memory>
 #ifndef  MEDIATOR_HPP
 #define  MEDIATOR_HPP
-//One FileOutput at a time throughout the p rogrma 
-static std::ofstream filewriter = std::ofstream("Output.csv", std::ios::out);
+//One FileOutput at a time throughout the program make sure that this is a truly unique and 
+static std::unique_ptr<std::ofstream> filewriter =  std::make_unique<std::ofstream>("Output.csv", std::ios::out);
 struct Mediator
 {
 	//All the fields are public. I use a struct to easily modify the data fields of equation, It also not necessary to store Mediator as a class.Sine mediator in this case 
@@ -30,7 +30,7 @@ struct Mediator
 		type = std::get<3>(parts);
 		resolution = std::vector<double>(method->NT + 1);
 		NSIM = Nsim;
-		filewriter << "NSIM: " << NSIM << " NT:" << method->NT << "\n";
+		(*filewriter) << "NSIM: " << NSIM << " NT:" << method->NT << "\n";
 	}
 	void start()
 	{
@@ -56,10 +56,12 @@ struct Mediator
 			
 		}
 		//Stop the stop watch
-		watch.StopStopWatch(filewriter);
+		watch.StopStopWatch((*filewriter));
 		//Print the process 
 		type->PostProcess();
-		}
+		//close the fiile after we are done using it
+		(*filewriter).close();
+	}
 			
 	
 		
@@ -68,7 +70,7 @@ struct Mediator
 	{
 
 		
-		filewriter << "Output # " << sample_num << " Price: " << type ->Price() << "\n";
+		(*filewriter) << "Output # " << sample_num << " Price: " << type ->Price() << "\n";
 		sample_num++;
 	}
 };

@@ -300,6 +300,7 @@ namespace MonteCarloOptionApplication
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 					rebate = 0.00f;
 					std::cout << "Defaulting to rebate of 0.00\n";
+					
 				}
 				std::cin >> rebate;
 				OptionData myOption(
@@ -538,8 +539,9 @@ namespace MonteCarloOptionApplication
 			std::cout << "Will the data be imported through  a CSV file (y/n)\n";
 			char test = 'N';
 			std::cin >> test;
-
+	
 			//Swtich between if 
+			
 			switch (std::toupper(test))
 			{
 			default:

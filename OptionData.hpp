@@ -12,7 +12,8 @@
 
 namespace OptionParams
 {
-	BOOST_PARAMETER_KEYWORD(Tag, strike)
+	
+		BOOST_PARAMETER_KEYWORD(Tag, strike)
 		BOOST_PARAMETER_KEYWORD(Tag, expiration)
 		BOOST_PARAMETER_KEYWORD(Tag, interestRate)
 		BOOST_PARAMETER_KEYWORD(Tag, volatility)
