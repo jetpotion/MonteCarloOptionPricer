@@ -1,5 +1,6 @@
 #ifndef SDE_HPP
 #define SDE_HPP
+
 //THE VARIOUS TYPES OF SDE 
 namespace MonteCarloOptionApplication
 {
@@ -11,66 +12,66 @@ namespace MonteCarloOptionApplication
 			SDE() = default;
 			SDE(const SDE& source) = default;
 			SDE& operator=(const SDE& source);
-			virtual ~SDE() = default;			//Destructor
-			virtual double Drift(double x, double  t) const = 0;	//Drift
-			virtual double Diffusion(double x, double t) const = 0; //Diffusion term
-			virtual double DriftedCorrected(double x, double t, double b) const = 0;	//Drif correcte
-			virtual double DiffusionDerivative(double x, double t) const = 0; //Diffusion Derivative
-			virtual void  Expiry(double exp) = 0; //Expiry  setter
-			virtual double Expiry() const = 0;  //Expiry  getter ;
-			virtual void InitialCondition(double initial_price) = 0; //Initial condition SETTER
-			virtual double InitialCondition() const = 0;  //Returns the initial stock price
-
-			
+			virtual ~SDE() = default; //Destructor
+			[[nodiscard]] virtual double Drift(double x, double t) const noexcept = 0; //Drift
+			[[nodiscard]] virtual double Diffusion(double x, double t) const noexcept = 0; //Diffusion term
+			[[nodiscard]] virtual double DriftedCorrected(double x, double t, double b) const noexcept = 0; //Drif correcte
+			[[nodiscard]] virtual double DiffusionDerivative(double x, double t) const  noexcept= 0; //Diffusion Derivative
+			[[nodiscard]] virtual void Expiry(double exp)  noexcept= 0; //Expiry  setter
+			[[nodiscard]] virtual double Expiry() const  noexcept= 0; //Expiry  getter ;
+			[[nodiscard]] virtual void InitialCondition(double initial_price) noexcept = 0; //Initial condition SETTER
+			[[nodiscard]] virtual double InitialCondition() const noexcept = 0; //Returns the initial stock price
 		};
+
 		//Classical GBM SDE
-		class GBM :public SDE
+		class GBM : public SDE
 		{
 		private:
-			double mu;		//The Drift
-			double vol;		//The volatility
-			double d;		//The dividend yield
-			double ic;		//StockPrice
-			double exp;		//Expiry
+			double mu; //The Drift
+			double vol; //The volatility
+			double d; //The dividend yield
+			double ic; //StockPrice
+			double exp; //Expiry
 		public:
-			GBM(double driftCoefficient, double diffusionCoefficient, double dividendYield, double initialCondition, double expiry);	//Overloaded constructor
-			GBM(const GBM& source);
+			constexpr GBM(double driftCoefficient, double diffusionCoefficient, double dividendYield, double initialCondition,
+			    double expiry) noexcept; //Overloaded constructor
+			constexpr GBM(const GBM& source);
 			GBM& operator=(const GBM& source);
-			virtual ~GBM() override = default;	//Overrided destructor
-			virtual double Drift(double x, double  t) const override;	//Drift
-			virtual double Diffusion(double x, double t) const override; //Diffusion term
-			virtual double DriftedCorrected(double x, double t, double b) const override;	//Drif correcte
-			virtual double DiffusionDerivative(double x, double t) const override; //Diffusion Derivative
-			virtual void  Expiry(double exp) override; //Expiry  setter
-			virtual double Expiry() const override;  //Expiry  getter ;
-			virtual void InitialCondition(double initial_price) override; //Initial condition SETTER
-			virtual double InitialCondition() const  override;  //Returns the initial stock price
-			
+			~GBM() override = default ; //Overrided destructor
+			[[nodiscard]] constexpr double Drift(double x, double t) const noexcept override; //Drift
+			[[nodiscard]] constexpr double Diffusion(double x, double t) const noexcept override; //Diffusion term
+			[[nodiscard]] constexpr double DriftedCorrected(double x, double t, double b) const noexcept override; //Drif correcte
+			[[nodiscard]] constexpr double DiffusionDerivative(double x, double t) const noexcept override; //Diffusion Derivative
+			[[nodiscard]] constexpr void Expiry(double exp)  noexcept override; //Expiry  setter
+			[[nodiscard]] constexpr double Expiry() const  noexcept override; //Expiry  getter ;
+			[[nodiscard]] constexpr void InitialCondition(double initial_price)  noexcept override; //Initial condition SETTER
+			[[nodiscard]] constexpr double InitialCondition() const noexcept override; //Returns the initial stock price
 		};
+
 		//The elastacity variance model of the SDE
 		class CEV : public SDE
 		{
 		private:
-			double mu;		//The Drift
-			double vol;		//The volatility
-			double d;		//The dividend yield
-			double ic;		//StockPrice
-			double exp;		//Expiry
+			double mu; //The Drift
+			double vol; //The volatility
+			double d; //The dividend yield
+			double ic; //StockPrice
+			double exp; //Expiry
 			double beta;
 		public:
-			CEV(double driftCoefficient, double diffusionCoefficient, double dividendYield, double initialCondition, double expiry, double beta);	//Overloaded constructor
-			CEV(const CEV& source);
+			constexpr CEV(double driftCoefficient, double diffusionCoefficient, double dividendYield, double initialCondition,
+			    double expiry, double beta) noexcept; //Overloaded constructor
+			constexpr CEV(const CEV& source) noexcept;
 			CEV& operator=(const CEV& source);
-			virtual ~CEV() override = default;	//Overrided destructor
-			virtual double Drift(double x, double  t) const override;	//Drift
-			virtual double Diffusion(double x, double t) const override; //Diffusion term
-			virtual double DriftedCorrected(double x, double t, double b) const override;	//Drif correcte
-			virtual double DiffusionDerivative(double x, double t) const override; //Diffusion Derivative
-			virtual void  Expiry(double exp) override; //Expiry  setter
-			virtual double Expiry() const override;  //Expiry  getter ;
-			virtual void InitialCondition(double initial_price) override; //Initial condition SETTER
-			virtual double InitialCondition() const  override;  //Returns the initial stock price
-			
+			~CEV() override = default; //Overrided destructor
+			[[nodiscard]] double Drift(double x, double t) const noexcept override; //Drift
+			[[nodiscard]] double Diffusion(double x, double t) const  noexcept override; //Diffusion term
+			[[nodiscard]] double DriftedCorrected(double x, double t, double b) const noexcept override; //Drif correcte
+			[[nodiscard]] double DiffusionDerivative(double x, double t) const noexcept override; //Diffusion Derivative
+			[[nodiscard]] void Expiry(double exp)  noexcept override; //Expiry  setter
+			[[nodiscard]] double Expiry() const override; //Expiry  getter ;
+			[[nodiscard]] void InitialCondition(double initial_price) noexcept  override; //Initial condition SETTER
+			[[nodiscard]] double InitialCondition() const noexcept  override; //Returns the initial stock price
 		};
 	}
 }

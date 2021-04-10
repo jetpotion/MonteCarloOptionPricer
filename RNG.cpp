@@ -3,7 +3,7 @@
 #include <numbers>
 //Generate the engine with a random device and with a distribution with mean 0 and sd = 1
 //Make sure that MT19937_64 engine is thread safe by declaring it thread local 
-thread_local std::mt19937_64 MonteCarloOptionApplication::IRng::RNG::engine(std::random_device{}());
+thread_local decltype(MonteCarloOptionApplication::IRng::RNG::engine) MonteCarloOptionApplication::IRng::RNG::engine(std::random_device{}());
 
 MonteCarloOptionApplication::IRng::MyMersenneTwister::MyMersenneTwister() : gaussian(0.0f, 1.0f)
 {
