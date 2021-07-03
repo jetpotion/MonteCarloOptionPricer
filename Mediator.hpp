@@ -4,6 +4,10 @@
 #include <iostream>
 #include <omp.h>
 #include <memory>
+#include "mysql_connection.h"
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/prepared_statement.h>
 #ifndef  MEDIATOR_HPP
 #define  MEDIATOR_HPP
 //One FileOutput at a time throughout the program make sure that this is a truly unique and 
@@ -62,7 +66,17 @@ struct Mediator
 		//close the fiile after we are done using it
 		(*filewriter).close();
 	}
-			
+	void WriteToDb(std::unique_ptr<sql::Connection> con,std::shared_ptr<sql::Statement> stmt)
+	{
+		con->setSchema("OptionPrices");
+		stmt = con->createStatement();
+		stmt->execute("DROP TABLE IF EXISTS OptionPrices");
+		stmt->execute("CREATE TABLE OptionPrices(sample_num INTEGER, price INTEGER(11,6)");
+		stmt->prepareStatement"INSERT INTO OptionPrices(?,?)");
+		stmt->setInt(1, sample_num);
+		stmt->setDouble(2, type->price);
+		stmt->execute();
+	}
 	
 		
 	//Method to write it a file and increment the sample number 
